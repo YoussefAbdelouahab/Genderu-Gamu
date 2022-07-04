@@ -60,7 +60,7 @@ Si l'installation a réussi, vous devriez pouvoir exécuter la commande suivante
 
 - Une fois les deux variables 'prénom' et 'genre' récupérées elles sont envoyées à la page html :  `res.render(path.join(__dirname + 'Views', 'GamePage.html'), {name: prénom, gender: genre});`.
 
-- Lorsque la page `http://localhost:4000/page` est chargée l'utilisateur se voit attribuer une variable pv initialisée à 10 et stocker de le(?) localStorage : 
+- Lorsque la page `http://localhost:4000/page` est chargée l'utilisateur se voit attribuer une variable pv initialisée à 10 et stocker dans le localStorage : 
 
     `var pv = 10;`
 
