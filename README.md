@@ -58,7 +58,7 @@ Si l'installation a réussi, vous devriez pouvoir exécuter la commande suivante
     - Une requete a la base de donnée pour récupérer un prénom aléatoirement : ``SELECT prénom FROM `jeu` ORDER BY RAND() LIMIT 1``.
     - Une requete a l'api `Gender Api` pour récupérer le genre du prénom : `genderApiClient.getByFirstName(prénom)`.
 
-- Une fois les deux variables Prénom et Genre récupérerelles sont envoyer a la page html :  `res.render(path.join(__dirname + 'Views', 'GamePage.html'), {name: prénom, gender: genre});`.
+- Une fois les deux variables Prénom et Genre récupérer elles sont envoyer a la page html :  `res.render(path.join(__dirname + 'Views', 'GamePage.html'), {name: prénom, gender: genre});`.
 
 - Lorsque la page `http://localhost:4000/page` est charger l'utilisateur ce voit attribuer une variable pv initialiser a 10 et stocker de le localStorage : 
 
