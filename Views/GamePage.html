@@ -1,0 +1,111 @@
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Genderu Gamu</title>
+		<link rel='stylesheet' href='css/styleGame.css'/>
+		<link rel='stylesheet' href='css/styleHome.css'/>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="http://localhost:4000"><h1>Genderu Gamu</h1></a>
+			</nav>
+			<section class="presentation first">
+				<div class="product-presentation">
+					<h2 id="PV">Points de vie : </h2><br/>
+					<h1 class="name"><%= name %></h1><br/>
+					<p class="center-text">
+						Devine le genre !
+					</p>
+					<div class="bigbody">
+						<div class="card">
+							<div class="card-image">
+							</div>
+							<div class="card-text">
+								<h2>
+									<button onclick="jeu('female')">Féminin</button>
+								</h2>
+								<p class="text-in-card">Une femme est un être humain de sexe ou de genre féminin. Avant l'âge adulte, au stade infantile, on parle de fille.
+									Il arrive cependant que le mot s'utilise indépendamment de l’âge.</p>
+							</div>
+							<div class="card-stats">
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-image-2">
+							</div>
+							<div class="card-text">
+								<h2>
+									<button class="butn-male" onclick="jeu('male')">Masculin</button>
+								</h2>
+								<p class="text-in-card">Un homme est un être humain mâle. Conformément à son étymologie latine, 
+									le mot est aussi employé pour désigner de manière générale l’espèce Homo sapiens, 
+									parfois distingué par l'emploi d'une majuscule.</p>
+							</div>
+							<div class="card-stats-2">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</header>
+
+		<footer>
+			<div class="column">
+				<h3>Aide</h3>
+				<p>abdelo_y@etna-alternance.net</p>
+				<p>07 69 63 63 48</p>
+				<p>Comment Jouer</p>
+			</div>
+			<div class="column">
+				<h3>Regle du jeu</h3>
+				<p>Lire le prénom</p>
+				<p>Deviner le genre du prénom</p>
+				<p>Recommencer</p>
+			</div>
+			<div class="column">
+				<h3>Réseaux</h3>
+				<p>Twitter</p>
+				<p>Instagram</p>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<script>
+	var pv = 10
+	var name = "<%= name %>";
+	var gender = "<%= gender %>";
+	
+	if(localStorage.getItem("pv") == null){
+		localStorage.setItem("pv", pv);
+	}
+
+	function jeu(gender_choosed){
+		//gestion des pv
+		if(gender == gender_choosed){
+			var new_pv = parseInt(localStorage.getItem("pv")) + 1;
+			localStorage.setItem("pv", new_pv);
+			location.reload();
+		}else{
+			var new_pv = parseInt(localStorage.getItem("pv")) - 1;
+			localStorage.setItem("pv", new_pv);
+			location.reload();
+		}
+
+		if(parseInt(localStorage.getItem("pv")) == 20){
+			localStorage.setItem("pv", 10);
+			alert("Bravo ! C'est gagner !");
+			
+			location.reload();
+		}else if (parseInt(localStorage.getItem("pv")) == 0){
+			localStorage.setItem("pv", 10);
+			alert("Zut ! C'est perdu !");
+			location.reload();
+		}
+	}
+	document.getElementById("PV").innerHTML = "Point de vie : " + parseInt(localStorage.getItem("pv"));
+
+</script>
