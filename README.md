@@ -36,14 +36,14 @@ Si l'installation a réussi, vous devriez pouvoir exécuter la commande suivante
     $ npm install
 
 ## Configuration de l'application
-- Ouvrez le fichier `./Config/dbConfig.js` et modifier si besoin les lignes 6 7 8 et 9.
+- Ouvrez le fichier `/Config/dbConfig.js` et modifier si besoin les lignes 6 7 8 et 9.
 
    `host     : 'localhost',
     user     : 'root',
     password : '',
     database : 'genderu_gamu'`
 
-- Créez vous un compte sur le [site officiel de Gender Api](https://gender-api.com/fr/account/login) dans la section [mon compte](https://gender-api.com/fr/account/overview) vous trouverez votre clé api copiez la et entrer la dans `./Controllers/gameController.js` ligne 20 `var genderApiClient = new GenderApi.Client('ma_clé_api');`
+- Créez vous un compte sur le [site officiel de Gender Api](https://gender-api.com/fr/account/login) dans la section [mon compte](https://gender-api.com/fr/account/overview) vous trouverez votre clé api copiez la et entrer la dans `/Controllers/gameController.js` ligne 20 `var genderApiClient = new GenderApi.Client('ma_clé_api');`
 
 ## Lancer l'application
     $npm start
