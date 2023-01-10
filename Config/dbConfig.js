@@ -5,7 +5,7 @@ import fs from 'fs';
 var db = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '',
+    password : 'root',
     database : 'genderu_gamu'
   });
 
